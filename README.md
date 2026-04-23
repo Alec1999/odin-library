@@ -1,1 +1,1 @@
-odin-library will be a simple, interactive web application for managing a personal reading list. This project is part of **The Odin Project** curriculum, focusing on javascript aobjects.
+odin-library will be a simple, interactive web application for managing a personal reading list. This project is part of **The Odin Project** curriculum, focusing on javascript objects.
