@@ -18,3 +18,20 @@ function addBookToLibrary(title, author, pages, read) {
   myLibrary.push(book);
 };
 
+addBookToLibrary("Harry Potter", "J.K. Rowling", "3,400", "yes");
+addBookToLibrary("1984", "George Orwell", "328", "yes");
+addBookToLibrary("To Kill a Mockingbird", "Harper Lee", "281", "no");
+
+function createBookCard() {
+    const libraryContainer = document.querySelector(".library-container");
+
+    for (const book of myLibrary) {
+        const newBookCard = document.createElement('div');
+        newBookCard.classList.add('book-card');
+
+        libraryContainer.appendChild(newBookCard);
+    };
+};
+
+console.log(myLibrary);
+createBookCard();
