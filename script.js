@@ -28,6 +28,7 @@ function createBookCard() {
     for (const book of myLibrary) {
         const newBookCard = document.createElement('div');
         newBookCard.classList.add('book-card');
+        newBookCard.textContent = "Title: " + book.title + "\n" + " Author: " + book.author + " Number of pages: " + book.pages + " Already read: " + book.read;
 
         libraryContainer.appendChild(newBookCard);
     };
