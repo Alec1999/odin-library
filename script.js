@@ -27,9 +27,19 @@ function createBookCard() {
 
     for (const book of myLibrary) {
         const newBookCard = document.createElement('div');
-        newBookCard.classList.add('book-card');
-        newBookCard.textContent = "Title: " + book.title + "\n" + " Author: " + book.author + " Number of pages: " + book.pages + " Already read: " + book.read;
+        const bookCardTitle = document.createElement('div');
+        const bookCardAuthor = document.createElement('div');
+        const bookCardPages = document.createElement('div');
+        const bookCardRead = document.createElement('div');
 
+        newBookCard.classList.add('book-card');
+
+        bookCardTitle.textContent = "Title: " + book.title;
+        bookCardAuthor.textContent = "Author: " + book.author;
+        bookCardPages.textContent = "Number of pages: " + book.pages;
+        bookCardRead.textContent = "Alread read: " + book.read;
+
+        newBookCard.append(bookCardTitle, bookCardAuthor, bookCardPages, bookCardRead);
         libraryContainer.appendChild(newBookCard);
     };
 };
