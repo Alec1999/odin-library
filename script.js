@@ -26,20 +26,19 @@ function createBookCard() {
     const libraryContainer = document.querySelector(".library-container");
 
     for (const book of myLibrary) {
-        const newBookCard = document.createElement('div');
-        const bookCardTitle = document.createElement('div');
-        const bookCardAuthor = document.createElement('div');
-        const bookCardPages = document.createElement('div');
-        const bookCardRead = document.createElement('div');
 
-        newBookCard.classList.add('book-card');
+        const newBookCard = document.createElement("div")
+        newBookCard.classList.add("book-card");
+        propertiesToShow = ["title", "author", "pages", "read"];
 
-        bookCardTitle.textContent = "Title: " + book.title;
-        bookCardAuthor.textContent = "Author: " + book.author;
-        bookCardPages.textContent = "Number of pages: " + book.pages;
-        bookCardRead.textContent = "Alread read: " + book.read;
+        for (const property of propertiesToShow) {
+            bookProperty = document.createElement("div");
+            bookProperty.classList.add("capitalize");
+            bookProperty.textContent = property + ": " + book[property];
 
-        newBookCard.append(bookCardTitle, bookCardAuthor, bookCardPages, bookCardRead);
+            newBookCard.appendChild(bookProperty);
+        };
+
         libraryContainer.appendChild(newBookCard);
     };
 };
