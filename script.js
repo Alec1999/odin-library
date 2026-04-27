@@ -26,7 +26,6 @@ function createBookCard() {
     const libraryContainer = document.querySelector(".library-container");
 
     for (const book of myLibrary) {
-
         const newBookCard = document.createElement("div")
         newBookCard.classList.add("book-card");
         propertiesToShow = ["title", "author", "pages", "read"];
@@ -35,10 +34,10 @@ function createBookCard() {
             bookProperty = document.createElement("div");
             bookProperty.classList.add("capitalize");
             bookProperty.textContent = property + ": " + book[property];
-
+            
             newBookCard.appendChild(bookProperty);
         };
-
+        
         libraryContainer.appendChild(newBookCard);
     };
 };
