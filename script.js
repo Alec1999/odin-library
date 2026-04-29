@@ -22,8 +22,10 @@ addBookToLibrary("Harry Potter", "J.K. Rowling", "3,400", "yes");
 addBookToLibrary("1984", "George Orwell", "328", "yes");
 addBookToLibrary("To Kill a Mockingbird", "Harper Lee", "281", "no");
 
-function createBookCard() {
+function createBookCards() {
     const libraryContainer = document.querySelector(".library-container");
+
+    libraryContainer.replaceChildren();
 
     for (const book of myLibrary) {
         const newBookCard = document.createElement("div")
@@ -44,18 +46,27 @@ function createBookCard() {
 
 function addNewBook() {
     const newBookForm = document.querySelector("#new-book-form");
-    const myModal = document.querySelector("#new-book-dialog");
+    const newBookModal = document.querySelector("#new-book-dialog");
 
     newBookForm.addEventListener("submit", (e) => {
         event.preventDefault();
 
         const formData = new FormData(newBookForm);
 
-        myModal.close();
+        addBookToLibrary(
+            formData.get("title"),
+            formData.get("author"),
+            formData.get("pages"),
+            formData.get("already-read")
+        );
+
+        newBookModal.close();
         console.log("Data captured!", Object.fromEntries(formData));
+
+        createBookCards();
     });
 };
 
 console.log(myLibrary);
-createBookCard();
+createBookCards();
 addNewBook();
