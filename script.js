@@ -24,8 +24,7 @@ addBookToLibrary("To Kill a Mockingbird", "Harper Lee", "281", "no");
 
 function createBookCards() {
     const libraryContainer = document.querySelector(".library-container");
-
-    libraryContainer.replaceChildren();
+    const allCards = [];
 
     for (const book of myLibrary) {
         const newBookCard = document.createElement("div")
@@ -37,11 +36,12 @@ function createBookCards() {
             bookProperty.classList.add("capitalize");
             bookProperty.textContent = property + ": " + book[property];
             
-            newBookCard.appendChild(bookProperty);
+            newBookCard.appendChild(bookProperty);  
         };
-        
-        libraryContainer.appendChild(newBookCard);
+        allCards.push(newBookCard);
     };
+    // Prevents previous book cards from duplicating. 
+    libraryContainer.replaceChildren(...allCards);
 };
 
 function addNewBook() {
