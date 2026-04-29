@@ -43,16 +43,18 @@ function createBookCard() {
 };
 
 function addNewBook() {
-    const newBookForm = document.querySelector("#new-book-form")
+    const newBookForm = document.querySelector("#new-book-form");
+    const myModal = document.querySelector("#new-book-dialog");
 
     newBookForm.addEventListener("submit", (e) => {
         event.preventDefault();
 
         const formData = new FormData(newBookForm);
 
+        myModal.close();
         console.log("Data captured!", Object.fromEntries(formData));
-    })
-}
+    });
+};
 
 console.log(myLibrary);
 createBookCard();
