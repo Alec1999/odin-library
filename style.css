@@ -1,3 +1,8 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
 .book-card {
     background-color: rgb(187, 187, 187);
     border-radius: 15px;
@@ -7,4 +12,11 @@
 
 .capitalize {
     text-transform: capitalize;
+}
+
+.library-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 50px;
+    margin-top: 50px;
 }
