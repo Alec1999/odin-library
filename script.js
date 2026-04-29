@@ -42,5 +42,18 @@ function createBookCard() {
     };
 };
 
+function addNewBook() {
+    const newBookForm = document.querySelector("#new-book-form")
+
+    newBookForm.addEventListener("submit", (e) => {
+        event.preventDefault();
+
+        const formData = new FormData(newBookForm);
+
+        console.log("Data captured!", Object.fromEntries(formData));
+    })
+}
+
 console.log(myLibrary);
 createBookCard();
+addNewBook();
