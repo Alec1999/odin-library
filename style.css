@@ -1,6 +1,6 @@
-body {
-    display: flex;
-    justify-content: center;
+button {
+    display: block;
+    margin: 50px auto;
 }
 
 .book-card {
@@ -16,7 +16,9 @@ body {
 
 .library-container {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 50px;
-    margin-top: 50px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    max-width: 1160px;
+    gap: 40px;
+    margin: 50px auto 0 auto;
 }
+
