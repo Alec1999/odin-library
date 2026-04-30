@@ -24,6 +24,7 @@ addBookToLibrary("To Kill a Mockingbird", "Harper Lee", "281", "no");
 
 function createBookCards() {
     const libraryContainer = document.querySelector(".library-container");
+    const trashCanIcon = document.getElementById("icon-trashcan");
     const allBookCards = [];
 
     for (const book of myLibrary) {
@@ -39,6 +40,10 @@ function createBookCards() {
             newBookCard.appendChild(bookProperty);
         };
         allBookCards.push(newBookCard);
+        newBookCard.innerHTML +=
+            `<svg class="trashcan-icon">
+                <use href="#icon-trashcan"></use>
+            </svg>`
     };
     // Prevents previous book cards from duplicating. 
     libraryContainer.replaceChildren(...allBookCards);

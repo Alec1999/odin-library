@@ -4,6 +4,7 @@ button {
 }
 
 .book-card {
+    position: relative;
     background-color: rgb(187, 187, 187);
     border-radius: 15px;
     height: 200px;
@@ -12,6 +13,19 @@ button {
 
 .capitalize {
     text-transform: capitalize;
+}
+
+.trashcan-icon {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    cursor: pointer;
+}
+
+.trashcan-icon:hover {
+    transform: scale(1.2);
 }
 
 .library-container {
